@@ -1,4 +1,4 @@
-package MergeSort;
+package TwoArrayMergeSort;
 
 public class EfficientMergeSort {
     public static int MergeSort(int fistarray[], int secondarray[]){
