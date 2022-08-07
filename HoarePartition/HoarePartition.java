@@ -1,29 +1,29 @@
 package HoarePartition;
 
 public class HoarePartition {
-    public static int partition(int arr[], int l, int h)
+    public static int partition(int number[], int starting, int ending)
     {   
-        int pivot=arr[l];
-        int i=l-1,j=h+1;
+        int pivot = number[starting];
+        int i = starting-1, j = ending + 1;
         while(true){
             do{
                 i++;
-            }while(arr[i]<pivot);
+            }while(number[i]<pivot);
             do{
                 j--;
-            }while(arr[j]>pivot);
-            if(i>=j)return j;
-            int temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
+            }while(number[j]>pivot);
+            if(i >= j)return j;
+            int temp = number[i];
+            number[i] = number[j];
+            number[j] = temp;
         }
     }
     
-    static void qSort(int arr[],int l,int h){
-        if(l<h){
-            int p=partition(arr,l,h);
-            qSort(arr,l,p);
-            qSort(arr,p+1,h);
+    static void qSort(int arr[],int starting, int ending){
+        if(starting < ending){
+            int p=partition(arr, starting, ending);
+            qSort(arr, starting, p);
+            qSort(arr,p+1, ending);
         }
     }
     public static void main(String[] args) {
