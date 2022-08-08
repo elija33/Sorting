@@ -12,15 +12,15 @@ public class cyclesort {
         
     }
     
-    static void cycleSortDistinct(int arr[], int n) 
+    public static void cycleSortDistinct(int arr[], int n) 
     { 
-        for(int cs=0;cs<n-1;cs++){
+        for(int cs = 0; cs<n-1; cs++){
             int item=arr[cs];
             int pos=cs;
             for(int i=cs+1;i<n;i++)
                 if(arr[i]<item)
                     pos++;
-                    
+
             //swap(item,arr[pos])
             
             int temp=item;
